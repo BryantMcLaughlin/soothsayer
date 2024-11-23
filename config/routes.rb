@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rankings
   get "welcome/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,5 +17,9 @@ Rails.application.routes.draw do
 #   SECRET_KEY_BASE "d291c756a5667b4ce0d2154794a63491b17d5243b430731cd7feda9e6b7ec7517d253070f7e064855308e2e080894ef008950548387c88723693d1596f50ced2"
 
   # Defines the root path route ("/")
-  root "welcome#index"
+  root "rankings#index"
+
+  # root 'players#index'
+  # get 'players', to: 'players#index'
+  
 end
