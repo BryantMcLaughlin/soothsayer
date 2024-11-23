@@ -1,3 +1,4 @@
+<div class="col-xl-4 col-md-6 col-sm8 col-10" style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px; " >
 <%= form_with(model: ranking) do |form| %>
   <% if ranking.errors.any? %>
     <div style="color: red">
@@ -13,60 +14,61 @@
 
   <div>
     <%= form.label :year, style: "display: block" %>
-    <%= form.number_field :year %>
+    <%= form.number_field :year, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pppasstd, style: "display: block" %>
-    <%= form.number_field :pppasstd %>
+    <%= form.number_field :pppasstd, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pppassyard, style: "display: block" %>
-    <%= form.number_field :pppassyard %>
+    <%= form.number_field :pppassyard, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :ppr, style: "display: block" %>
-    <%= form.number_field :ppr %>
+    <%= form.number_field :ppr, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pprushtd, style: "display: block" %>
-    <%= form.number_field :pprushtd %>
+    <%= form.number_field :pprushtd, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pprushyard, style: "display: block" %>
-    <%= form.number_field :pprushyard %>
+    <%= form.number_field :pprushyard, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pprecyard, style: "display: block" %>
-    <%= form.number_field :pprecyard %>
+    <%= form.number_field :pprecyard, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :pprectd, style: "display: block" %>
-    <%= form.number_field :pprectd %>
+    <%= form.number_field :pprectd, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :PPfumble, style: "display: block" %>
-    <%= form.number_field :PPfumble %>
+    <%= form.number_field :PPfumble, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :ppint, style: "display: block" %>
-    <%= form.number_field :ppint %>
+    <%= form.number_field :ppint, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :ppfgm, style: "display: block" %>
-    <%= form.number_field :ppfgm %>
+    <%= form.number_field :ppfgm, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary col-12" %>
   </div>
 <% end %>
+</div
