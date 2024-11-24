@@ -1,16 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Rankings" %>
 
-<h1>Rankings</h1>
+<!-- Centered Content -->
+<div class="text-center">
+  <!-- Logo Spot -->
+  <div class="mb-4">
+    <!-- Corrected path for logo -->
+    <img src="<%= asset_path('/home/blmclaughlin/soothsayer/app/assets/images/Logo.jpeg') %>" alt="Logo" class="img-fluid" style="max-width: 200px;">
+  </div>
 
-<div id="rankings">
-  <% @rankings.each do |ranking| %>
-    <%= render ranking %>
-    <p>
-      <%= link_to "Show this ranking", ranking %>
-    </p>
-  <% end %>
+  <!-- Heading -->
+  <h1>Rankings</h1>
+
+  <!-- Display Rankings -->
+  <div id="rankings">
+    <% @rankings.each do |ranking| %>
+      <%= render ranking %>
+      <p>
+        <%= link_to "Show this ranking", ranking %>
+      </p>
+    <% end %>
+  </div>
+
+  <!-- Link to Create New Ranking -->
+  <%= link_to "Create a new ranking", new_ranking_path, class: "btn btn-primary mt-4" %>
 </div>
-
-<%= link_to "New ranking", new_ranking_path %>
