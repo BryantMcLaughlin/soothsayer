@@ -1,0 +1,57 @@
+<%= form_with(model: ranking) do |form| %>
+  <% if ranking.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ranking.errors.count, "error") %> prohibited this ranking from being saved:</h2>
+
+      <ul>
+        <% ranking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label :pppassyd, style: "display: block" %>
+    <%= form.text_field :pppassyd %>
+  </div>
+
+  <div>
+    <%= form.label :pppasstd, style: "display: block" %>
+    <%= form.text_field :pppasstd %>
+  </div>
+
+  <div>
+    <%= form.label :ppr, style: "display: block" %>
+    <%= form.text_field :ppr %>
+  </div>
+
+  <div>
+    <%= form.label :pprecyd, style: "display: block" %>
+    <%= form.text_field :pprecyd %>
+  </div>
+
+  <div>
+    <%= form.label :pprectd, style: "display: block" %>
+    <%= form.text_field :pprectd %>
+  </div>
+
+  <div>
+    <%= form.label :pprushyd, style: "display: block" %>
+    <%= form.text_field :pprushyd %>
+  </div>
+
+  <div>
+    <%= form.label :pprushtd, style: "display: block" %>
+    <%= form.text_field :pprushtd %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
