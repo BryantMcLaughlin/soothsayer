@@ -1,0 +1,31 @@
+<div class="pos-f-t">
+  <!-- Collapsible Navbar -->
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4 text-center">
+      <h5 class="text-white h4">Products</h5>
+      <div class="d-flex justify-content-center mt-3">
+        <%= link_to "Fantasy Football Rankings Calculator", new_ranking_path, class: "nav-link text-white px-3" %>
+        <%= link_to "Sports Betting Calculator", rankings_path, class: "nav-link text-white px-3" %>
+        <%= link_to "Arbitrage Betting Calculator", rankings_path, class: "nav-link text-white px-3" %>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+    <!-- Left: Soothsayer Fantasy -->
+    <div>
+      <%= link_to "Soothsayer Fantasy", root_path, class: "navbar-brand" %>
+    </div>
+    <!-- Right: Navbar Toggler -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbarToggleExternalContent" 
+      aria-controls="navbarToggleExternalContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
