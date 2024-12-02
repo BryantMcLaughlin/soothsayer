@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_30_065226) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_01_010204) do
+  create_table "player_statistics", force: :cascade do |t|
+    t.integer "year"
+    t.string "player_name"
+    t.string "position"
+    t.float "pass_yards"
+    t.float "pass_tds"
+    t.float "receptions"
+    t.float "rec_yards"
+    t.float "rec_tds"
+    t.float "rush_yards"
+    t.float "rush_tds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rankings", force: :cascade do |t|
     t.integer "year"
     t.float "pppassyd"

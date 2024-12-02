@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :rankings
+  resources :rankings do
+    collection do
+      get :results
+      end
+    end
   get "home/index"
   get "home/about"
   get "home/awards"

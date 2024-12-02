@@ -1,9 +1,24 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'csv'
+
+# File path for the CSV
+file_path = Rails.root.join('db', 'seeds', 'NFL 2012-2023 yearly_player_data.csv')
+
+puts "Importing player statistics from CSV..."
+
+CSV.foreach(file_path, headers: true) do |row|
+  PlayerStatistic.create!(
+    year: row['season'].to_i,
+    player_name: row['player_name'],
+    position: row['position'],
+    pass_yards: row['passing_yards'].to_f,
+    pass_tds: row['pass_td'].to_f,
+    receptions: row['receptions'].to_f,
+    rec_yards: row['receiving_yards'].to_f,
+    rec_tds: row['reception_td'].to_f,
+    rush_yards: row['rushing_yards'].to_f,
+    rush_tds: row['run_td'].to_f
+  )
+end
+
+puts "Player statistics imported successfully!"
+

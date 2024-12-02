@@ -1,16 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<h1>Rank NFL Players by Custom Scoring</h1>
 
-<% content_for :title, "Rankings" %>
-
-<h1>Rankings</h1>
-
-<div id="rankings">
-  <% @rankings.each do |ranking| %>
-    <%= render ranking %>
-    <p>
-      <%= link_to "Show this ranking", ranking %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New ranking", new_ranking_path %>
+<%= form_with model: Ranking.new, url: rankings_path, method: :post, local: true do |f| %>
+  <p>
+    <label>Year:</label>
+    <%= f.number_field :year, step: 1, value: 2013 %>
+  </p>
+  <p>
+    <label>Points per Passing Yard:</label>
+    <%= f.number_field :pppassyd, step: 0.01, value: 0.04 %>
+  </p>
+  <p>
+    <label>Points per Passing TD:</label>
+    <%= f.number_field :pppasstd, step: 0.01, value: 4 %>
+  </p>
+  <p>
+    <label>Points per Reception:</label>
+    <%= f.number_field :ppr, step: 0.01, value: 1 %>
+  </p>
+  <p>
+    <label>Points per Receiving Yard:</label>
+    <%= f.number_field :pprecyd, step: 0.01, value: 0.1 %>
+  </p>
+  <p>
+    <label>Points per Receiving TD:</label>
+    <%= f.number_field :pprectd, step: 0.01, value: 6 %>
+  </p>
+  <p>
+    <label>Points per Rushing Yard:</label>
+    <%= f.number_field :pprushyd, step: 0.01, value: 0.1 %>
+  </p>
+  <p>
+    <label>Points per Rushing TD:</label>
+    <%= f.number_field :pprushtd, step: 0.01, value: 6 %>
+  </p>
+  <%= f.submit "Calculate Rankings" %>
+<% end %>
