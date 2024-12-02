@@ -1,37 +1,50 @@
-<h1>Rank NFL Players by Custom Scoring</h1>
+<h1 style="text-align: center;">Rank NFL Players by Custom Scoring</h1>
 
-<%= form_with model: Ranking.new, url: rankings_path, method: :post, local: true do |f| %>
-  <p>
-    <label>Year:</label>
-    <%= f.number_field :year, step: 1, value: 2013 %>
-  </p>
-  <p>
-    <label>Points per Passing Yard:</label>
-    <%= f.number_field :pppassyd, step: 0.01, value: 0.04 %>
-  </p>
-  <p>
-    <label>Points per Passing TD:</label>
-    <%= f.number_field :pppasstd, step: 0.01, value: 4 %>
-  </p>
-  <p>
-    <label>Points per Reception:</label>
-    <%= f.number_field :ppr, step: 0.01, value: 1 %>
-  </p>
-  <p>
-    <label>Points per Receiving Yard:</label>
-    <%= f.number_field :pprecyd, step: 0.01, value: 0.1 %>
-  </p>
-  <p>
-    <label>Points per Receiving TD:</label>
-    <%= f.number_field :pprectd, step: 0.01, value: 6 %>
-  </p>
-  <p>
-    <label>Points per Rushing Yard:</label>
-    <%= f.number_field :pprushyd, step: 0.01, value: 0.1 %>
-  </p>
-  <p>
-    <label>Points per Rushing TD:</label>
-    <%= f.number_field :pprushtd, step: 0.01, value: 6 %>
-  </p>
-  <%= f.submit "Calculate Rankings" %>
-<% end %>
+<div style="max-width: 400px; margin: 0 auto;">
+  <%= form_with model: Ranking.new, url: rankings_path, method: :post, local: true do |f| %>
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_year" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Year</label>
+      <%= f.number_field :year, step: 1, value: 2013, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pppassyd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Passing Yard</label>
+      <%= f.number_field :pppassyd, step: 0.01, value: 0.04, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pppasstd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Passing TD</label>
+      <%= f.number_field :pppasstd, step: 0.01, value: 4, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_ppr" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Reception</label>
+      <%= f.number_field :ppr, step: 0.01, value: 1, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pprecyd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Receiving Yard</label>
+      <%= f.number_field :pprecyd, step: 0.01, value: 0.1, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pprectd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Receiving TD</label>
+      <%= f.number_field :pprectd, step: 0.01, value: 6, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pprushyd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Rushing Yard</label>
+      <%= f.number_field :pprushyd, step: 0.01, value: 0.1, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="ranking_pprushtd" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Points per Rushing TD</label>
+      <%= f.number_field :pprushtd, step: 0.01, value: 6, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+    </div>
+
+    <div class="d-grid gap-2" style="text-align: center;">
+      <%= f.submit "Calculate Rankings", class:"btn btn-primary" %>
+    </div>
+  <% end %>
+  <br>
+</div>

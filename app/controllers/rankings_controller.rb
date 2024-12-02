@@ -25,7 +25,7 @@ class RankingsController < ApplicationController
 
     if @ranking.save
       Rails.logger.debug "Ranking saved: #{@ranking.inspect}"
-      redirect_to results_rankings_path(ranking_id: @ranking.id), notice: "Ranking was successfully created."
+      redirect_to results_rankings_path(ranking_id: @ranking.id, year: @ranking.year), notice: "Ranking was successfully created."
     else
       Rails.logger.debug "Ranking not saved: #{@ranking.errors.full_messages}"
       respond_to do |format|
