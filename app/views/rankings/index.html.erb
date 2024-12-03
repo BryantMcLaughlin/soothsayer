@@ -4,7 +4,7 @@
   <%= form_with model: Ranking.new, url: rankings_path, method: :post, local: true do |f| %>
     <div style="margin-bottom: 10px;">
       <label for="ranking_year" style="display: block; text-align: center; background-color: #333; color: white; padding: 5px; border: 2px solid #333; border-radius: 5px; margin-bottom: 3px; font-size: 14px;">Year</label>
-      <%= f.number_field :year, step: 1, value: 2013, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
+      <%= f.select :year, options_for_select(2012..2023, 2018), { prompt: "Select Year" }, style: "width: 100%; padding: 5px; margin-top: 3px; border-radius: 5px; border: 2px solid #333; display: block; text-align: center; font-size: 14px;" %>
     </div>
 
     <div style="margin-bottom: 10px;">
@@ -48,3 +48,4 @@
   <% end %>
   <br>
 </div>
+

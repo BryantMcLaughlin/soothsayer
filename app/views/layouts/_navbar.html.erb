@@ -16,8 +16,11 @@
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
     <!-- Left: Soothsayer Fantasy -->
-    <div>
-      <%= link_to "Soothsayer Fantasy", root_path, class: "navbar-brand" %>
+    <div class="d-flex align-items-center">
+      <%= link_to root_path, class: "d-flex align-items-center text-decoration-none" do %>
+        <img src="<%= asset_path('Logo.jpeg') %>" alt="Logo" style="height: 30px; margin-right: 5px;">
+        <span class="navbar-brand">Soothsayer Fantasy</span>
+      <% end %>
     </div>
     <!-- Right: Navbar Toggler -->
     <button 
@@ -27,7 +30,8 @@
       data-target="#navbarToggleExternalContent" 
       aria-controls="navbarToggleExternalContent" 
       aria-expanded="false" 
-      aria-label="Toggle navigation">
+      aria-label="Toggle navigation"
+      style="margin-right: 10px">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>

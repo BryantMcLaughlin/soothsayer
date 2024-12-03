@@ -29,7 +29,7 @@ class RankingsController < ApplicationController
     else
       Rails.logger.debug "Ranking not saved: #{@ranking.errors.full_messages}"
       respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @ranking.errors, status: :unprocessable_entity }
       end
     end
