@@ -61,7 +61,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "pg", ">= 2.1"
+  gem "sqlite3", ">= 2.1"
 end
 
 group :production do
