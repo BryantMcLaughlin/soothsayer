@@ -24,6 +24,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: <%= ENV['postgres://u43um12cv0iqhe:p8dda399b7f7afb7a17cd5132fa6fecb595691819bd30d4a6da7845c4a6a143f5@ccpa7stkruda3o.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d6mknnn9bbejre'] %>
+  database: <%= ENV['DATABASE_URL'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
