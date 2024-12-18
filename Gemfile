@@ -18,7 +18,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Add in social media icons
-gem 'font-awesome-sass', '~> 6.0.0'
+gem 'font-awesome-sass', '~> 6.7.2'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
